@@ -1,8 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.LineBorder;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Calculator {
+public class Calculator implements ActionListener {
+
+
 
 	JFrame jf;
 	JLabel DisplayLabel;
@@ -29,64 +33,108 @@ public class Calculator {
 		jf.setVisible(true);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		sevenButton = new JButton("7");
-		sevenButton.setBounds(30, 130, 80, 80);
+		sevenButton=new JButton("7");
+		sevenButton.setBounds(30,130,80,80);
 		sevenButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		sevenButton.addActionListener(this);
 		jf.add(sevenButton);
-
-		eightButton = new JButton("8");
-		eightButton.setBounds(130, 130, 80, 80);
+		
+		 eightButton=new JButton("8");
+		eightButton.setBounds(130,130,80,80);
 		eightButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		eightButton.addActionListener(this);
 		jf.add(eightButton);
-
-		nineButton = new JButton("9");
-		nineButton.setBounds(230, 130, 80, 80);
+		
+		 nineButton=new JButton("9");
+		nineButton.setBounds(230,130,80,80);
 		nineButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		nineButton.addActionListener(this);
 		jf.add(nineButton);
-
-		fourButton = new JButton("4");
-		fourButton.setBounds(30, 230, 80, 80);
+		
+		 fourButton=new JButton("4");
+		fourButton.setBounds(30,230,80,80);
 		fourButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		fourButton.addActionListener(this);
 		jf.add(fourButton);
-
-		fiveButton = new JButton("5");
-		fiveButton.setBounds(130, 230, 80, 80);
+		
+		 fiveButton=new JButton("5");
+		fiveButton.setBounds(130,230,80,80);
 		fiveButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		fiveButton.addActionListener(this);
 		jf.add(fiveButton);
-
-		sixButton = new JButton("6");
-		sixButton.setBounds(230, 230, 80, 80);
+		
+		sixButton=new JButton("6");
+		sixButton.setBounds(230,230,80,80);
 		sixButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		sixButton.addActionListener(this);
 		jf.add(sixButton);
-
-		oneButton = new JButton("1");
-		oneButton.setBounds(30, 330, 80, 80);
+		
+		 oneButton=new JButton("1");
+		oneButton.setBounds(30,330,80,80);
 		oneButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		oneButton.addActionListener(this);
 		jf.add(oneButton);
-
-		twoButton = new JButton("2");
-		twoButton.setBounds(130, 330, 80, 80);
+		
+          twoButton=new JButton("2");
+		twoButton.setBounds(130,330,80,80);
 		twoButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		twoButton.addActionListener(this);
 		jf.add(twoButton);
-
-		threeButton = new JButton("3");
-		threeButton.setBounds(230, 330, 80, 80);
-		threeButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		
+		 threeButton=new JButton("3");
+		 threeButton.setBounds(230,330,80,80);
+		 threeButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		threeButton.addActionListener(this);
 		jf.add(threeButton);
 		
-		plusButton = new JButton("+");
-		plusButton.setBounds(430,130,80,280);
-		plusButton.setFont(new Font("Arial", Font.PLAIN, 40));
-		jf.add(plusButton);
-
-		equalButton = new JButton("=");
+		
+		 dotButton=new JButton(".");
+		dotButton.setBounds(30,430,80,80);
+		dotButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		dotButton.addActionListener(this);
+		jf.add(dotButton);
+		
+		 zeroButton=new JButton("0");
+		zeroButton.setBounds(130,430,80,80);
+		zeroButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		zeroButton.addActionListener(this);
+		jf.add(zeroButton);
+		
+		 equalButton=new JButton("=");
 		equalButton.setBounds(230,430,180,80);
 		equalButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		equalButton.addActionListener(this);
 		jf.add(equalButton);
-
-		clearButton = new JButton("Clear");
-		clearButton.setBounds(430,430,80,80);
-		jf.add(clearButton);
+		
+		 divButton=new JButton("÷");
+		divButton.setBounds(330,130,80,80);
+		divButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		divButton.addActionListener(this);
+		jf.add(divButton);
+		
+		 mulButton=new JButton("×");
+		mulButton.setBounds(330,230,80,80);
+		mulButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		mulButton.addActionListener(this);
+		jf.add(mulButton);
+		
+		 minusButton=new JButton("−");
+		minusButton.setBounds(330,330,80,80);
+		minusButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		minusButton.addActionListener(this);
+		jf.add(minusButton);
+		
+		 plusButton=new JButton("+");
+		plusButton.setBounds(430,130,80,280);
+		plusButton.setFont(new Font("Arial", Font.PLAIN, 40));
+		plusButton.addActionListener(this);
+		jf.add(plusButton);
+		
+		 clearButton=new JButton("Clear");
+		 clearButton.setBounds(430,430,80,80);
+		 clearButton.setFont(new Font("Arial", Font.PLAIN, 19));
+		 clearButton.addActionListener(this);
+			jf.add(clearButton);
 
 
 	}
@@ -94,4 +142,13 @@ public class Calculator {
 	public static void main(String[] args) {
 		new Calculator();
 	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	    if (e.getSource() == sevenButton) {
+	        DisplayLabel.setText(DisplayLabel.getText() + "7");
+	    }
+	}
+
+	
 }
