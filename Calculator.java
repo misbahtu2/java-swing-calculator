@@ -319,6 +319,8 @@ public class Calculator implements ActionListener {
 			DisplayLabel.setText(result+"");
 			
 			
+		}else if(e.getSource()== clearButton) {
+			DisplayLabel.setText("");
 		}
 		
 		
