@@ -6,6 +6,10 @@ public class Calculator {
 
     JFrame jf;
     JLabel DisplayLabel;
+    
+    JButton oneButton, twoButton, threeButton, fourButton, fiveButton;
+    JButton sixButton, sevenButton, eightButton, nineButton, zeroButton;
+
 
     public Calculator() {
         jf = new JFrame("Calculator");
@@ -22,8 +26,27 @@ public class Calculator {
         jf.add(DisplayLabel);
         jf.setVisible(true);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        sevenButton = new JButton("7");
+        sevenButton.setBounds(30,130,80,80);
+        sevenButton.setFont(new Font("Arial", Font.PLAIN, 40));
+        jf.add(sevenButton);
+
+        eightButton = new JButton("8");
+        eightButton.setBounds(130,130,80,80);
+        eightButton.setFont(new Font("Arial", Font.PLAIN, 40));
+        jf.add(eightButton);
+
+        nineButton = new JButton("9");
+        nineButton.setBounds(230,130,80,80);
+        nineButton.setFont(new Font("Arial", Font.PLAIN, 40));
+        jf.add(nineButton);
+
+        
     }
 
+    
+    
     public static void main(String[] args) {
         new Calculator();
     }
