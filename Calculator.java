@@ -292,8 +292,35 @@ public class Calculator implements ActionListener {
 			
 			DisplayLabel.setText(DisplayLabel.getText()+".");
 			}
+		}else if(e.getSource()== equalButton) {
+			
+			String newValue=DisplayLabel.getText();		
+			
+			float oldValueF=Float.parseFloat(Oldvalue);
+			float newValueF=Float.parseFloat(newValue);
+			
+			float result= 0 ;
+			
+			switch (operation) {
+			case "+":
+				result=oldValueF+newValueF;
+				break;
+			case"-":
+				result=oldValueF-newValueF;
+				break;
+			case"×":
+				result=oldValueF*newValueF;
+				break;
+			case"÷":
+				result=oldValueF/newValueF;
+				break;
+			}
+			
+			DisplayLabel.setText(result+"");
+			
+			
 		}
 		
+		
 	}
-	
 }
