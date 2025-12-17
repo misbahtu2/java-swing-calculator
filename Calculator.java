@@ -1,44 +1,61 @@
-import javax.swing.*;
-import java.awt.*;
-import javax.swing.border.LineBorder;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Calculator implements ActionListener {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
 
+public class Calculator implements ActionListener {
 	
-	boolean isOperatorClicked = false;
+	boolean isOperatorClicked=false;
+	
 	String Oldvalue;
 	String operation;
-
-
-
+	
 	JFrame jf;
 	JLabel DisplayLabel;
-
-	JButton oneButton, twoButton, threeButton, fourButton, fiveButton;
-	JButton sixButton, sevenButton, eightButton, nineButton, zeroButton;
-	JButton plusButton, minusButton, mulButton, divButton;
-	JButton equalButton, dotButton, clearButton;
-
-
+	JButton sevenButton;
+	JButton eightButton;
+	JButton nineButton;
+	JButton fourButton;
+	JButton fiveButton;
+	JButton sixButton;
+	JButton oneButton;
+	JButton twoButton;
+	JButton threeButton;
+	JButton dotButton;
+	JButton zeroButton;
+	JButton equalButton;
+	JButton divButton;
+	JButton mulButton,clearButton;
+	JButton minusButton;
+	JButton plusButton;
+	
+	
+	
 	public Calculator() {
-		jf = new JFrame("Calculator");
+	
+	    jf=new JFrame("Calculator");
 		jf.setLayout(null);
 		jf.setSize(550, 600);
 		jf.setLocation(450, 100);
-
-		DisplayLabel = new JLabel("");
-		DisplayLabel.setBounds(30, 50, 480, 50);
+		
+		LineBorder lineBorder = new LineBorder(Color.black, 2);
+		
+		DisplayLabel=new JLabel("");
+		DisplayLabel.setBounds(30,50, 480,50);
 		DisplayLabel.setFont(new Font("Serif", Font.PLAIN, 40));
-		DisplayLabel.setBorder(new LineBorder(Color.BLACK, 2));
+		DisplayLabel.setBorder(lineBorder);
+		DisplayLabel.setOpaque(true);
 		DisplayLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-
-		jf.add(DisplayLabel);
-		jf.setVisible(true);
-		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		sevenButton=new JButton("7");
+		DisplayLabel.setForeground(Color.black);
+		
+		
+		 sevenButton=new JButton("7");
 		sevenButton.setBounds(30,130,80,80);
 		sevenButton.setFont(new Font("Arial", Font.PLAIN, 40));
 		sevenButton.addActionListener(this);
@@ -140,14 +157,20 @@ public class Calculator implements ActionListener {
 		 clearButton.setFont(new Font("Arial", Font.PLAIN, 19));
 		 clearButton.addActionListener(this);
 			jf.add(clearButton);
-
-
+		
+		
+		
+		jf.add(DisplayLabel);
+		
+		jf.setVisible(true);
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 	}
-
+	
 	public static void main(String[] args) {
 		new Calculator();
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()== sevenButton) {
